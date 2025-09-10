@@ -1,0 +1,20 @@
+table {
+    width: 100%;
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+td {
+    width: 50%;
+    height: 100px;
+    text-align: left;
+    font-size: 20px;
+}
+
+.first-cell {
+    background-color: #6662a6;
+}
+
+.second-cell {
+    background-color: #bc6161;
+}

@@ -1,0 +1,49 @@
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+.parallax-container {
+    position: relative;
+    opacity: 0.9;
+    min-height: 100vh; 
+
+    background-attachment: fixed; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#image1 {
+    background-image: url('https://th.bing.com/th/id/R.13d439ab5c0a311768700428f969f8b5?rik=6w7LzwkcZxnAgA&pid=ImgRaw&r=0');
+}
+
+#image2 {
+    background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/e3dfe3136927427.6202755a13014.jpg');
+}
+
+.static-section {
+    padding: 50px 80px;
+    background-color: black;
+    color: white;
+    text-align: center; 
+    letter-spacing: 5px;
+}
+
+.caption {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.caption span {
+    color: #fff;
+    font-size: 25px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}
