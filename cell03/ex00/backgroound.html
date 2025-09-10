@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background</title>
+    <link rel="stylesheet" href="backgroound.css">
+</head>
+<body>
+
+    <button id="click">Click me!</button>
+
+    <script>
+    const changeButton = document.getElementById('click');
+const bodyElement = document.body;
+
+
+function getRandomHexColor() {
+  const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+  return `#${randomColor.padStart(6, '0')}`;
+}
+
+
+changeButton.addEventListener('click', () => {
+
+  const newColor = getRandomHexColor();
+  
+  bodyElement.style.backgroundColor = newColor;
+});
+</script>
+
+</body>
+</html>
