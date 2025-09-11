@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>It's over 9000</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #5e5d5d;
+        }
+        .calculator-form {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        input[type="text"], select, input[type="submit"] {
+            padding: 10px;
+            font-size: 1.2rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="text"] {
+            width: 80px;
+            text-align: center;
+        }
+        input[type="submit"] {
+            cursor: pointer;
+            background-color: #ff8c00;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <form class="calculator-form" id="calculator">
+        <input type="text" id="left-operand">
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="text" id="right-operand">
+        <input type="submit" value="Try me!">
+    </form>
+
+    <script>
+
+        setInterval(() => {
+            alert('Please, use me...');
+        }, 30000); 
+
+
+        document.getElementById('calculator').addEventListener('submit', function(event) {
+
+            event.preventDefault(); 
+
+
+            const leftValue = document.getElementById('left-operand').value;
+            const rightValue = document.getElementById('right-operand').value;
+            const operator = document.getElementById('operator').value;
+
+            const numLeft = parseInt(leftValue, 10);
+            const numRight = parseInt(rightValue, 10);
+
+   
+            if (isNaN(numLeft) || isNaN(numRight) || numLeft < 0 || numRight < 0 || leftValue !== String(numLeft) || rightValue !== String(numRight)) {
+                alert(':(');
+                return;
+            }
+
+
+            if ((operator === '/' || operator === '%') && numRight === 0) {
+                const errorMessage = "It's over 9000!";
+                alert(errorMessage);
+                console.log(errorMessage);
+                return; 
+            }
+
+            let result;
+            switch (operator) {
+                case '+':
+                    result = numLeft + numRight;
+                    break;
+                case '-':
+                    result = numLeft - numRight;
+                    break;
+                case '*':
+                    result = numLeft * numRight;
+                    break;
+                case '/':
+                    result = numLeft / numRight;
+                    break;
+                case '%':
+                    result = numLeft % numRight;
+                    break;
+            }
+
+            alert(result);
+
+            console.log(result);
+        });
+    </script>
+
+</body>
+</html>
