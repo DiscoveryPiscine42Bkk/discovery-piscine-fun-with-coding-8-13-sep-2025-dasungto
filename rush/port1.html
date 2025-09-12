@@ -12,13 +12,11 @@
             <a class="nav-brand" href="index.html">OurPortfolio</a>
             <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox">
             <label for="nav-toggle" class="nav-toggle-label">
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
+                <span class="nav-bar"></span>
+                <span class="nav-bar"></span>
+                <span class="nav-bar"></span>
             </label>
             <ul class="nav-links">
-                 <li class="nav-item"><a class="nav-link" href="#home"></a></li>
                 <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="#showcase">Showcase</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
@@ -34,8 +32,8 @@
    <section id="about" class="about-section">
         <div class="container">
             <h2 class="section-title">About Me</h2>
-            <div class="about-hero">
-                <div class="about-hero-text">
+            <div class="about">
+                <div class="about-text">
                     <p class="sub-heading">Hello there.</p>
                     <h3>I'm DANUSORN SUNGTONG</h3>
                     <p>
@@ -44,7 +42,7 @@
                         new solutions that benefit society and industry.
                     </p>
                 </div>
-                <div class="about-hero-image">
+                <div class="about-image">
                     <img src="assets/IMG_7094.jpg" alt="Profile1">
                 </div>
             </div>
@@ -211,11 +209,9 @@
             </div>
     </div>
 </section>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
+ <script>
+    document.addEventListener("DOMContentLoaded", function() {
     const navbar = document.querySelector('.main-nav');
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.main-nav .nav-link');
 
     window.addEventListener('scroll', function() {
 
@@ -225,21 +221,6 @@
         } else {
             if(navbar) navbar.classList.remove('scrolled');
         }
-
-        let currentSectionId = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            if (pageYOffset >= (sectionTop - 150)) { 
-                currentSectionId = section.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').substring(1) === currentSectionId) {
-                link.classList.add('active');
-            }
-        });
     });
 });
     </script>
