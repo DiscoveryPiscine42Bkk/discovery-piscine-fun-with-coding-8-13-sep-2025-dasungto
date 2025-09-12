@@ -12,9 +12,9 @@
             <a class="nav-brand" href="index.html">OurPortfolio</a>
             <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox">
             <label for="nav-toggle" class="nav-toggle-label">
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
+                <span class="nav-bar"></span>
+                <span class="nav-bar"></span>
+                <span class="nav-bar"></span>
             </label>
             <ul class="nav-links">
                 <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
@@ -32,15 +32,15 @@
    <section id="about" class="about-section">
         <div class="container">
             <h2 class="section-title">About Me</h2>
-            <div class="about-hero">
-                <div class="about-hero-text">
+            <div class="about">
+                <div class="about-text">
                     <p class="sub-heading">Hello there.</p>
                     <h3>I'm DECHCHART TASILP</h3>
                     <p>
                         Currently studying at the Faculty of Information Technology, King Mongkut's Institute of Technology Ladkrabang (KMITL). I'd like to learn and further develop my programming skills.
                     </p>
                 </div>
-                <div class="about-hero-image">
+                <div class="about-image">
                     <img src="assets/IMG_7095.jpg" alt="Profile2">
                 </div>
             </div>
@@ -184,9 +184,7 @@
 </section>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-    const navbar = document.querySelector('.main-nav');
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.main-nav .nav-link');
+        const navbar = document.querySelector('.main-nav');
 
     window.addEventListener('scroll', function() {
 
@@ -196,21 +194,6 @@
         } else {
             if(navbar) navbar.classList.remove('scrolled');
         }
-
-        let currentSectionId = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            if (pageYOffset >= (sectionTop - 150)) { 
-                currentSectionId = section.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').substring(1) === currentSectionId) {
-                link.classList.add('active');
-            }
-        });
     });
 });
     </script>
